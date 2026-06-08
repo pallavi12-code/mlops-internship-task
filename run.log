@@ -1,0 +1,22 @@
+2026-06-08T08:40:54 [INFO] ============================================================
+2026-06-08T08:40:54 [INFO] MLOps Batch Pipeline — JOB START
+2026-06-08T08:40:54 [INFO]   input   : data.csv
+2026-06-08T08:40:54 [INFO]   config  : config.yaml
+2026-06-08T08:40:54 [INFO]   output  : metrics.json
+2026-06-08T08:40:54 [INFO]   log-file: run.log
+2026-06-08T08:40:54 [INFO] ============================================================
+2026-06-08T08:40:54 [INFO] Step 1/4 — Loading config
+2026-06-08T08:40:54 [INFO] Config loaded — seed=42, window=5, version=v1
+2026-06-08T08:40:54 [INFO] Random seed set to 42
+2026-06-08T08:40:54 [INFO] Step 2/4 — Loading dataset
+2026-06-08T08:40:54 [INFO] Dataset loaded — 10000 rows, columns: ['timestamp', 'open', 'high', 'low', 'close', 'volume_btc', 'volume_usd']
+2026-06-08T08:40:54 [INFO] Step 3/4 — Computing rolling mean and signal
+2026-06-08T08:40:54 [INFO] Computing rolling mean with window=5
+2026-06-08T08:40:54 [DEBUG] Rolling mean computed — 4 leading rows excluded (NaN, window warm-up)
+2026-06-08T08:40:54 [INFO] Generating binary signal (1 if close > rolling_mean, else 0)
+2026-06-08T08:40:54 [INFO] Signal generated for 9996 rows (4 rows excluded from signal due to warm-up)
+2026-06-08T08:40:54 [INFO] Step 4/4 — Computing metrics
+2026-06-08T08:40:54 [INFO] Metrics summary — rows_processed=9996, signal_rate=0.4991, latency_ms=16ms
+2026-06-08T08:40:54 [INFO] Metrics written to metrics.json
+2026-06-08T08:40:54 [INFO] JOB COMPLETE — status=success
+2026-06-08T08:40:54 [INFO] ============================================================
